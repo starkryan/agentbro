@@ -22,4 +22,4 @@ ENV LIVEKIT_URL=$LIVEKIT_URL
 ENV GOOGLE_API_KEY=$GOOGLE_API_KEY
 
 # Run the agent
-CMD ["python", "agent.py", "start"]
+CMD ["python", "agent.py", "dev"]
