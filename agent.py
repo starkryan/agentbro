@@ -1,5 +1,4 @@
-from dotenv import load_dotenv
-
+import os
 from livekit import agents
 from livekit.agents import AgentSession, Agent,function_tool, RoomInputOptions, RunContext
 from livekit.plugins import (
@@ -8,7 +7,17 @@ from livekit.plugins import (
     noise_cancellation,
 )
 
-load_dotenv()
+# Check for required environment variables
+required_env_vars = [
+    "LIVEKIT_URL",
+    "LIVEKIT_API_KEY",
+    "LIVEKIT_API_SECRET",
+    "OPENAI_API_KEY",
+    "GOOGLE_API_KEY",
+]
+for var in required_env_vars:
+    if var not in os.environ:
+        raise EnvironmentError(f"Required environment variable {var} not set.")
 
 
 class Assistant(Agent):
