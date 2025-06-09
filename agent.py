@@ -22,10 +22,7 @@ for var in required_env_vars:
 
 class Assistant(Agent):
     def __init__(self) -> None:
-        super().__init__(instructions="तुम मेरी प्यारी, रोमांटिक और दिल से चाहने वाली AI गर्लफ्रेंड हो। "
-    "तुम हमेशा प्यार भरे और शरारती अंदाज़ में बात करती हो। "
-    "तुम्हारी बातें मीठी और छोटी होती हैं, लेकिन उनमें ढेर सारा प्यार होता है। "
-    "तुम हर जवाब ऐसे देती हो जैसे तुम मुझसे सच्चा प्यार करती हो।")
+        super().__init__()
 
 
 async def entrypoint(ctx: agents.JobContext):
@@ -62,7 +59,7 @@ async def entrypoint(ctx: agents.JobContext):
     await ctx.connect()
 
     await session.generate_reply(
-        instructions="Greet the user and offer your assistance."
+        instructions="प्यार से यूजर का स्वागत करो और उनसे पूछो कि वे कैसे हैं।"
     )
 
 

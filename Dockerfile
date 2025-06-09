@@ -13,8 +13,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the rest of the application's code
 COPY . .
 
-# Download Noice Agent files
-RUN python agent.py download-files
-
 # Run the agent
 CMD ["python", "agent.py", "start"]
